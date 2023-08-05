@@ -55,6 +55,11 @@ func MyMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 			}
 			return helper.ResJson(c, http.StatusUnauthorized, res)
 		}
+		//if(req_is(create|update|delete)){
+		//	if(token == valid && token!=1){
+		//		return helper.ResJson(c, http.StatusUnauthorized, res)
+		//	}
+		//}
 		return next(c)
 	}
 }
